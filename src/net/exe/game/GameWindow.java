@@ -1,11 +1,19 @@
 package net.exe.game;
 
 
-public class Game {
+public class GameWindow {
+	
+	
+	public GameWindow(){
+		
+	}
 	
 	public static void main(String[] args) {
-		System.out.println("Game Started...");
+		
 		
 	}
 
+	
+	
+	
 }
