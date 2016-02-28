@@ -1,4 +1,4 @@
-package net.exe.window;
+package net.exe.GameOS;
 
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
@@ -53,7 +53,8 @@ public class GameWindow extends JFrame{
 			this.fullScreeMode = fullScreenNewMode;
 			setfullScreen();
 		}else{
-			System.err.println("Error -> " + fullScreeMode + " is not supported... \nError Code 93");
+			System.err.println("Error -> " + fullScreeMode + " is not supported... \nProgram Terminated");
+			System.exit(0); // termination Muhahahhaha
 		}
 		
 		

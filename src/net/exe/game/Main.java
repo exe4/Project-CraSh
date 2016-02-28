@@ -1,6 +1,6 @@
 package net.exe.game;
 
-import net.exe.window.GameWindow;
+import net.exe.GameOS.GameWindow;
 
 public class Main {
 	
