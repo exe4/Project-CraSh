@@ -1,8 +1,12 @@
 package net.exe.game;
 
 import net.exe.GameOS.GameWindow;
+import net.exe.GameOS.SpriteSheet;
 
 public class Main {
+	
+	
+	static SpriteSheet spriteSheet = new SpriteSheet();
 	
 	
 	public static void main(String args[]){

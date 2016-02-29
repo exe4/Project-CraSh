@@ -8,6 +8,14 @@ import javax.imageio.ImageIO;
 
 public class ImageLoader {
 
+	/*
+	 * @author .exe
+	 * 
+	 * This is the Image Loading system
+	 * 
+	 */
+	
+	
 	public static BufferedImage loadImage(Class<?> classFile, String Path) {
 		
 		URL url = classFile.getResource(Path);
