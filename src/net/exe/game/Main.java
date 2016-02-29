@@ -13,6 +13,8 @@ public class Main {
 		 GameWindow frame = new GameWindow("Project CraSH", 1280, 720);
 		 frame.setFullScreen(1);
 		 frame.setVisible(true);
+		 
+		 
 	}
 	
 	
