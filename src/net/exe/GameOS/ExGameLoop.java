@@ -36,13 +36,66 @@ public class ExGameLoop extends JPanel implements Runnable{
 	@Override
 	public void run(){
 		
-		/*init*/
+		
+		init();
+		
 		long lastTime = System.nanoTime();
 		double nsecondsPerTick = 1000000000D;
 		int frames = 0;
 		int ticks = 0;
 		long lastTimer = System.currentTimeMillis();
+		double deltaTime = 0;
+		
+		while(running){
+			long now = System.nanoTime();
+			deltaTime = (now - lastTime) / nsecondsPerTick;
+			lastTime = now;
+			
+			boolean shouldRender = false;
+			
+			while(deltaTime >= 1){
+				ticks++;
+				/*Tick + DeltaTime*/
+				tick(deltaTime);
+				deltaTime --;
+				
+				shouldRender = true;
+			}
+			
+			if(shouldRender){
+				frames++;
+				render();
+			}
+			
+			try {
+				Thread.sleep(2);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			if(System.currentTimeMillis() - lastTimer >= 1000){
+				lastTimer += 1000;
+				tps = frames;
+				fps = ticks;
+				
+				frames = 0;
+				ticks = 0;
+			}
+			
+		}
+	}
+	
+	private void init() {
+		running = true;
+	}
+	
+	private void tick(double deltaTime) {
 		
 		
 	}
+	
+	private void render() {
+		
+	}
+	
 }
