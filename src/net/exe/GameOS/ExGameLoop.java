@@ -1,6 +1,9 @@
 package net.exe.GameOS;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
@@ -13,6 +16,9 @@ public class ExGameLoop extends JPanel implements Runnable{
 	private int fps, tps, width, height; 
 	
 	public static double currentFps = 120D;
+	
+	public Graphics2D graphics2D;
+	private BufferedImage img;
 	
 	public ExGameLoop(int width, int height) {
 		this.width = width;
@@ -86,6 +92,8 @@ public class ExGameLoop extends JPanel implements Runnable{
 	}
 	
 	private void init() {
+		img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		graphics2D = (Graphics2D) img.getGraphics();
 		running = true;
 	}
 	
@@ -95,7 +103,16 @@ public class ExGameLoop extends JPanel implements Runnable{
 	}
 	
 	private void render() {
+		graphics2D.clearRect(0, 0, width, height);
+	}
+	
+	public void clear(){
+		Graphics g2 = getGraphics();
 		
+		if(img != null){
+			g2.drawImage(img, 0, 0, null);
+		}
+		g2.dispose();
 	}
 	
 }
