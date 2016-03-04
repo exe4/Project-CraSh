@@ -91,18 +91,18 @@ public class ExGameLoop extends JPanel implements Runnable{
 		}
 	}
 	
-	private void init() {
+	public void init() {
 		img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		graphics2D = (Graphics2D) img.getGraphics();
 		running = true;
 	}
 	
-	private void tick(double deltaTime) {
+	public void tick(double deltaTime) {
 		
 		
 	}
 	
-	private void render() {
+	public void render() {
 		graphics2D.clearRect(0, 0, width, height);
 	}
 	
