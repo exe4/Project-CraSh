@@ -10,7 +10,12 @@ public class VillageLevelLoader extends GameState{
 	public VillageLevelLoader(GameStateManager gsm) {
 		super(gsm);
 	}
-
+	
+	@Override
+	public void init() {
+		
+	}
+	
 	@Override
 	public void tick(double deltaTime) {
 		
@@ -18,12 +23,7 @@ public class VillageLevelLoader extends GameState{
 
 	@Override
 	public void render(Graphics2D g) {
-		g.drawString("hello Pynon", 200, 200);
+		g.drawString("hello World!!", 200, 200);
 	}
 
-	@Override
-	public void init() {
-		
-	}
-	
 }
