@@ -60,5 +60,20 @@ public class Vector2F {
 		return Math.sqrt(v1*v1 + v2*v2);
 	}
 	
+	public Vector2F getScreenLocation(){
+		return new Vector2F(xpos, ypos);
+	}
+	
+	public Vector2F getWorldLocation(){
+		return new Vector2F(xpos - worldXPos, ypos - worldYPos);
+	}
+	
+	public double getDistanceBetweenWorldVectors(Vector2F vec){
+		float dx = Math.abs(getWorldLocation().xpos - vec.getWorldLocation().xpos);
+		float dy = Math.abs(getWorldLocation().ypos - vec.getWorldLocation().ypos);
+		
+		return Math.abs(dx*dx - dy*dy);
+	}
+	
 	
 }
