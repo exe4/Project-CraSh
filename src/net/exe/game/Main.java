@@ -1,7 +1,8 @@
 package net.exe.game;
 
-import net.exe.gameengine.GameWindow;
-import net.exe.gameengine.SpriteSheet;
+import net.exe.game_engine.GameWindow;
+import net.exe.game_engine.SpriteSheet;
+import net.exe.gameloop.GameLoop;
 
 public class Main {
 	
@@ -16,6 +17,7 @@ public class Main {
 	public static void main(String args[]) {
 		GameWindow frame = new GameWindow("Project-CraSH", 1280, 720);
 		frame.setFullscreen(1);
+		frame.add(new GameLoop(1280, 720));
 		frame.setVisible(true);
 	}
 
