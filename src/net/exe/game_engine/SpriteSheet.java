@@ -1,4 +1,4 @@
-package net.exe.gameengine;
+package net.exe.game_engine;
 
 import java.awt.image.BufferedImage;
 
