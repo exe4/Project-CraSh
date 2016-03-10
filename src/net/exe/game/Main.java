@@ -1,7 +1,9 @@
 package net.exe.game;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
 import net.exe.game_engine.GameWindow;
-import net.exe.game_engine.SpriteSheet;
 import net.exe.gameloop.GameLoop;
 
 public class Main {
@@ -12,12 +14,15 @@ public class Main {
 	 * the "main" class, with the main function
 	 */
 	
-	SpriteSheet blocks = new SpriteSheet();
+	public static GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	
+	public static int width = gd.getDisplayMode().getWidth();
+	public static int height = gd.getDisplayMode().getHeight();
 	
 	public static void main(String args[]) {
-		GameWindow frame = new GameWindow("Project-CraSH", 1280, 720);
+		GameWindow frame = new GameWindow("Project-CraSH", width, height);
 		frame.setFullscreen(1);
-		frame.add(new GameLoop(1280, 720));
+		frame.add(new GameLoop(width, height));
 		frame.setVisible(true);
 	}
 
